@@ -14,9 +14,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // @formatter:off
         http
-                .authorizeRequests((authorize) -> authorize
-                        .anyRequest().permitAll()
-                );
+                .authorizeRequests().anyRequest().permitAll();
         // @formatter:on
         return http.build();
     }
