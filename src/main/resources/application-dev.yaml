@@ -4,7 +4,7 @@ spring:
   datasource:
     driverClassName: org.postgresql.Driver
     url: "jdbc:postgresql://db-server:5432/skiing"
-    username: skiing_user
+    username:
     password:
   thymeleaf:
     cache: false
