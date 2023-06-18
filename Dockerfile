@@ -1,7 +1,7 @@
 ##########################################333
 ##  Build stage
 ##########################################
-FROM eclipse-temurin:16-jdk AS builder
+FROM eclipse-temurin:17.0.7_7-jdk AS builder
 WORKDIR /workspace/app
 RUN mkdir -p src/main/java
 COPY build.gradle .
@@ -26,7 +26,7 @@ RUN export GRADLE_OPTS="-Djdk.lang.Process.launchMechanism=vfork" &&  ./gradlew 
 ##########################################333
 ##  Deployable container stage
 ##########################################333
-FROM eclipse-temurin:16-jdk
+FROM eclipse-temurin:eclipse-temurin:17-jre-focal
 
 #update OS
 RUN apt-get update && apt-get upgrade -y
