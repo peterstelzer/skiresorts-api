@@ -26,7 +26,7 @@ RUN export GRADLE_OPTS="-Djdk.lang.Process.launchMechanism=vfork" &&  ./gradlew 
 ##########################################333
 ##  Deployable container stage
 ##########################################333
-FROM eclipse-temurin:eclipse-temurin:17-jre-focal
+FROM eclipse-temurin:17-jre-focal
 
 #update OS
 RUN apt-get update && apt-get upgrade -y
