@@ -8,6 +8,16 @@ import lombok.Data;
 public class Resort {
     private long resortId;
     private String resortName;
-    private Integer squareFootage;
-    private Integer verticalFeet;
+    private Integer acreage;
+    private Integer verticalHeight;
+    private Integer numberOfLifts;
+    private Integer numberOfRuns;
+    private String mapUrl;
+    private String passOffered;
+    private Integer numberOfTerrainParks;
+    private Integer percentBeginner;
+    private Integer percentIntermediate;
+    private Integer percentExpert;
+    private String cityState;
+
 }
