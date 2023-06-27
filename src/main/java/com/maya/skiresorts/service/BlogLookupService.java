@@ -23,6 +23,7 @@ public class BlogLookupService {
                 .createDate(resort.getCreateDate())
                 .author(resort.getAuthor())
                 .content(resort.getContent())
+                .title(resort.getTitle())
                 .build();
     }
 
