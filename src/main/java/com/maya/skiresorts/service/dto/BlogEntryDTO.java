@@ -13,4 +13,5 @@ public class BlogEntryDTO {
     private LocalDate createDate;
     private String author;
     private String content;
+    private String imageName;
 }

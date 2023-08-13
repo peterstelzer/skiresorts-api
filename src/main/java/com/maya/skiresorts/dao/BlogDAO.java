@@ -19,6 +19,7 @@ public class BlogDAO {
                         .createDate(rs.getDate("create_date").toLocalDate())
                         .author(rs.getString("author"))
                         .content(rs.getString("content"))
+                        .imageName(rs.getString("image_name"))
                         .build());
     }
 }
