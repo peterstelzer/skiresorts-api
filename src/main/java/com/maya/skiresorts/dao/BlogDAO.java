@@ -22,4 +22,9 @@ public class BlogDAO {
                         .imageName(rs.getString("image_name"))
                         .build());
     }
+
+    public void updateBlogEntry(BlogEntry blogEntry){
+        jdbcTemplate.update("update content set title = ?, author = ?, content = ?, image_name = ? where content_id = ?",
+                blogEntry.getTitle(), blogEntry.getAuthor(), blogEntry.getContent(), blogEntry.getImageName(), blogEntry.getId());
+    }
 }
