@@ -12,7 +12,7 @@ import java.util.List;
 public class BlogDAO {
     private final JdbcTemplate jdbcTemplate;
     public List<BlogEntry> getBlogEntries(){
-        return jdbcTemplate.query("select * from content;",
+        return jdbcTemplate.query("select * from skiingadmin.content;",
                 (rs, rowNum) -> BlogEntry.builder()
                         .id(rs.getInt("content_id"))
                         .title(rs.getString("title"))

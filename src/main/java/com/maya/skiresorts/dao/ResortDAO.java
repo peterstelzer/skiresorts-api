@@ -12,7 +12,7 @@ import java.util.List;
 public class ResortDAO {
     private final JdbcTemplate jdbcTemplate;
     public List<Resort> getResorts(){
-        return jdbcTemplate.query("select * from resort;",
+        return jdbcTemplate.query("select * from skiingadmin.resort;",
                 (rs, rowNum) -> Resort.builder()
                         .resortId(rs.getInt("resort_id"))
                         .resortName(rs.getString("resort_name"))
