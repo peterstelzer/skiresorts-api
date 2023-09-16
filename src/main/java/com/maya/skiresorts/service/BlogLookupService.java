@@ -17,13 +17,14 @@ public class BlogLookupService {
         return blogDAO.getBlogEntries().stream().map(this::toDTO).toList();
     }
 
-    private BlogEntryDTO toDTO(BlogEntry resort) {
+    private BlogEntryDTO toDTO(BlogEntry blogEntry) {
         return BlogEntryDTO.builder()
-                .id(resort.getId())
-                .createDate(resort.getCreateDate())
-                .author(resort.getAuthor())
-                .content(resort.getContent())
-                .title(resort.getTitle())
+                .id(blogEntry.getId())
+                .createDate(blogEntry.getCreateDate())
+                .author(blogEntry.getAuthor())
+                .content(blogEntry.getContent())
+                .title(blogEntry.getTitle())
+                .imageName(blogEntry.getImageName())
                 .build();
     }
 
