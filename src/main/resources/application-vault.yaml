@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    vault:
+      uri: https://vault.vault.svc:8200
+      authentication: KUBERNETES
+      kubernetes:
+        role: ${application.vault-role}
+        kubernetes-path: kubernetes
+        service-account-token-file: /var/run/secrets/kubernetes.io/serviceaccount/token
+      kv:
+        application-name: basic-secret/postgres-creds
+      fail-fast: true
+  config:
+    import: vault://secret/${application.vault-secret-path}/postgres-creds-slalomcolumn?prefix=secret.postgres.

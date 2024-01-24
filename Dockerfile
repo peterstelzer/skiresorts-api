@@ -36,6 +36,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=AmericalLosAngeles
 RUN apt-get install -y tzdata
 
+COPY certs certs
+RUN for filename in certs/*; do keytool -importcert -file "$filename" -alias "$filename" -keystore "$JAVA_HOME"/lib/security/cacerts -storepass changeit -noprompt; done
+
 RUN addgroup spring
 RUN adduser spring --ingroup spring
 USER spring:spring
