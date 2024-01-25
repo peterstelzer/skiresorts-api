@@ -7,7 +7,7 @@ RUN mkdir -p src/main/java
 COPY build.gradle .
 COPY gradle gradle
 COPY gradlew .
-COPY ./src/main/java/com/maya/skiresorts/SkiResortsApplication.java src/main/java/net/bipper/website/SkiResortsApplication.java
+COPY ./src/main/java/com/maya/skiresorts/SkiResortsApplication.java src/main/java/com/maya/skiresorts/SkiResortsApplication.java
 
 #download dependencies first to speed up later builds
 #This step should only need to re-run when the build file dependencies change
@@ -34,7 +34,11 @@ RUN apt-get update && apt-get upgrade -y
 # set time zone
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=AmericalLosAngeles
-RUN apt-get install -y tzdata
+RUN apt-get install -y tzdata  \
+    && rm -rf /var/cache/apk/*
+
+COPY certs certs
+RUN for filename in certs/*; do keytool -importcert -file "$filename" -alias "$filename" -keystore "$JAVA_HOME"/lib/security/cacerts -storepass changeit -noprompt; done
 
 RUN addgroup spring
 RUN adduser spring --ingroup spring

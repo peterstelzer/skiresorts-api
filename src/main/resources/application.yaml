@@ -3,12 +3,11 @@ server:
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
-    url: "jdbc:postgresql://localhost:5432/skiing"
-    username: skiing_user
-    password:
+    url: ${secret.postgres.url}
+    username: ${secret.postgres.username}
+    password: ${secret.postgres.password}
   thymeleaf:
     cache: false
-
 devtools:
   livereload:
     enabled: true

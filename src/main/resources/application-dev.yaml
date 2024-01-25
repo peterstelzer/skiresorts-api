@@ -1,14 +1,11 @@
 server:
   port: 8080
 spring:
-  datasource:
-    driverClassName: org.postgresql.Driver
-    url: "jdbc:postgresql://db-server.bipper.net:5432/skiing"
-    username:
-    password:
   thymeleaf:
     cache: false
-
+application:
+  vault-secret-path: basic-secret
+  vault-role: basic-secret-role-ski-resorts-dev
 logging:
   level:
     root: debug

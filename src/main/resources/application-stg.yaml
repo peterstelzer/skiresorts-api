@@ -3,8 +3,8 @@ server:
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
-    url:
-    username:
-    password:
   thymeleaf:
     cache: false
+  application:
+    vault-secret-path: basic-secret-stg
+    vault-role: basic-secret-role-skiresorts-stage
