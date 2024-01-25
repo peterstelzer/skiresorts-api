@@ -5,6 +5,6 @@ spring:
     driverClassName: org.postgresql.Driver
   thymeleaf:
     cache: false
-  application:
-    vault-secret-path: basic-secret-stg
-    vault-role: basic-secret-role-skiresorts-stage
+application:
+  vault-secret-path: basic-secret-stg
+  vault-role: basic-secret-role-skiresorts-stage
